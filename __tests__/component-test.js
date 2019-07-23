@@ -1,12 +1,12 @@
 ﻿import React from 'react';
 import renderer from 'react-test-renderer';
 
-import ExampleComponent from '../components/ExampleComponent';
+import FormComponent from '../components/FormComponent';
 
-test('работа ExampleComponent', () => {
+test('работа FormComponent', () => {
 
   const component = renderer.create(
-    <ExampleComponent />
+    <FormComponent />
   );
 
   let componentTree=component.toJSON();

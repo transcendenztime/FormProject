@@ -1,9 +1,9 @@
 ﻿import React from 'react';
 //import PropTypes from 'prop-types';
 
-import './ExampleComponent.css';
+import './FormComponent.css';
 
-class ExampleComponent extends React.PureComponent {
+class FormComponent extends React.PureComponent {
 
   static propTypes = {
     //name: PropTypes.string.isRequired,
@@ -12,7 +12,7 @@ class ExampleComponent extends React.PureComponent {
   render() {
 
     return (
-      <div className="SExampleComponent">
+      <div className="SFormComponent">
         Пример компонента
       </div>
     )
@@ -22,4 +22,4 @@ class ExampleComponent extends React.PureComponent {
 
 }
 
-export default ExampleComponent;
+export default FormComponent;
