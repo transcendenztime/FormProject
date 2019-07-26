@@ -1,12 +1,11 @@
-﻿//import React from 'react';
-//import PropTypes from 'prop-types';
-
-import './FormComponent.css';
-
-import React from "react";
+﻿import React from "react";
 import { Formik, Field, Form } from "formik";
 
 import FormSchema from "../services/FormSchema";
+
+//import FormComponentSmall from "./FormComponentSmall";
+
+import './FormComponent.css';
 
 class FormComponent extends React.PureComponent {
 
