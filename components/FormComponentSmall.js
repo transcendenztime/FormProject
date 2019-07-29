@@ -6,6 +6,26 @@ import FormSchemaSmall from "../services/FormSchemaSmall";
 
 
 class FormComponentSmall extends React.PureComponent {
+//class FormComponentSmall extends React.Component {
+
+    state = {
+        nameSmall: "",
+        color: "",
+        color2: "blue"
+    };
+
+    colorChanged = (EO) => {
+        console.log("color = " + EO.target.value);
+        /*this.setState({searchText: EO.target.value},function() {
+            this.processList();
+        });*/
+        this.setState({color: EO.target.value});
+    };
+
+    /*colorChanged2 = (EO) => {
+        console.log("color2 = " + EO.target.value);
+        this.setState({color2: EO.target.value});
+    };*/
 
     render() {
         //const { handleChange, handleSubmit, values } = this.props;
@@ -14,11 +34,21 @@ class FormComponentSmall extends React.PureComponent {
                 <h2>Small form</h2>
                 <Formik
 
-                    initialValues={
+                    /*initialValues={
                         {
-                            nameSmall: ""
+                            nameSmall: "",
+                            color: "",
+                            color2: "blue"
                         }
-                    }
+                    }*/
+
+                    /*initialValues={
+                        {
+                            nameSmall: this.state.nameSmall,
+                            color: this.state.color,
+                            color2: this.state.color2
+                        }
+                    }*/
 
                     validationSchema={FormSchemaSmall}
                     onSubmit={(values, actions) => {
@@ -42,6 +72,32 @@ class FormComponentSmall extends React.PureComponent {
                             touched.nameSmall && (
                                 <div className="field-error">{errors.nameSmall}</div>
                             )}
+                            <select
+                                name="color"
+                                value={this.state.color}
+                                onChange={this.colorChanged}
+                                style={{ display: 'block' }}
+                            >
+                                <option value="" label="Select a color" />
+                                <option value="red" label="red" />
+                                <option value="blue" label="blue" />
+                                <option value="green" label="green" />
+                            </select>
+                            <Field
+                                component="select"
+                                name="color2"
+
+
+                            >
+                                <option value="red">Red</option>
+                                <option value="green">Green</option>
+                                <option value="blue">Blue</option>
+                            </Field>
+                            {errors.color &&
+                            touched.color &&
+                            <div className="field-error">
+                                {errors.color}
+                            </div>}
                             <button type="button" onClick={null}>Set value</button>
                             <button type="button" onClick={null}>Reset form</button>
                             <button type="submit">Submit</button>
@@ -56,3 +112,16 @@ class FormComponentSmall extends React.PureComponent {
 }
 
 export default FormComponentSmall;
+/*
+<select
+                                name="color"
+                                value={this.state.color}
+                                onChange={this.colorChanged}
+                                style={{ display: 'block' }}
+                            >
+                                <option value="" label="Select a color" />
+                                <option value="red" label="red" />
+                                <option value="blue" label="blue" />
+                                <option value="green" label="green" />
+                            </select>
+ */
