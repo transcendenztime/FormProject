@@ -34,13 +34,13 @@ class FormComponentSmall extends React.PureComponent {
                 <h2>Small form</h2>
                 <Formik
 
-                    /*initialValues={
+                    initialValues={
                         {
                             nameSmall: "",
                             color: "",
                             color2: "blue"
                         }
-                    }*/
+                    }
 
                     /*initialValues={
                         {
